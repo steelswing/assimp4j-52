@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="src" displayName="src" projectFiles="true">
+        <itemPath>src/jassimp.cpp</itemPath>
+        <itemPath>src/jassimp.h</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>src</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="2">
+      <toolsSet>
+        <compilerSet>MinGW_1|MinGW</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <standard>10</standard>
+          <commandlineTool>gcc</commandlineTool>
+          <incDir>
+            <pElem>C:/Program Files/Java/jdk1.8.0_342/include</pElem>
+            <pElem>C:/Program Files/Java/jdk1.8.0_342/include/win32</pElem>
+            <pElem>include</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <standard>8</standard>
+          <incDir>
+            <pElem>C:/Program Files/Java/jdk1.8.0_342/include</pElem>
+            <pElem>C:/Program Files/Java/jdk1.8.0_342/include/win32</pElem>
+            <pElem>include</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${CND_DISTDIR}/libjassimp.${CND_DLIB_EXT}</output>
+          <linkerAddLib>
+            <pElem>lib</pElem>
+          </linkerAddLib>
+          <stripSymbols>true</stripSymbols>
+          <linkerCopySharedLibs>true</linkerCopySharedLibs>
+          <commandlineTool>g++</commandlineTool>
+          <linkerLibItems>
+            <linkerLibFileItem>lib/libassimp.dll.a</linkerLibFileItem>
+            <linkerLibFileItem>lib/libassimp-5.dll</linkerLibFileItem>
+          </linkerLibItems>
+          <commandLine>-LC:/msys64/mingw64/lib -static --static -static-libgcc -static-libstdc++</commandLine>
+        </linkerTool>
+      </compileType>
+      <packaging>
+        <packType>Tar</packType>
+        <packFileList>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}lib/libassimp-5.dll"
+                            from="${CND_DISTDIR}/libassimp-5.dll"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}"
+                            from="${OUTPUT_PATH}"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+        </packFileList>
+      </packaging>
+      <item path="src/jassimp.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/jassimp.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="2">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="src/jassimp.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/jassimp.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
