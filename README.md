@@ -9,16 +9,16 @@ This library works without LWJGL 3! And has a normal (not C++) API.
 #### Static mesh loader
 ```java
 public static final Set<AiPostProcessSteps> ASSIMP_POST = new HashSet<AiPostProcessSteps>() {
-      private static final long serialVersionUID = 1L;
-
       {
-          add(AiPostProcessSteps.TRIANGULATE);
-          add(AiPostProcessSteps.GEN_SMOOTH_NORMALS);
-          add(AiPostProcessSteps.FLIP_UVS);
-          add(AiPostProcessSteps.CALC_TANGENT_SPACE);
-          add(AiPostProcessSteps.JOIN_IDENTICAL_VERTICES);
-          add(AiPostProcessSteps.OPTIMIZE_MESHES);
-          add(AiPostProcessSteps.FIX_INFACING_NORMALS);
+            add(AiPostProcessSteps.Triangulate);
+            add(AiPostProcessSteps.GenSmoothNormals);
+            add(AiPostProcessSteps.GenUVCoords);
+            add(AiPostProcessSteps.FlipUVs);
+
+            add(AiPostProcessSteps.CalcTangentSpace);
+            add(AiPostProcessSteps.JoinIdenticalVertices);
+
+            add(AiPostProcessSteps.OptimizeMeshes);
       }
   };
   
