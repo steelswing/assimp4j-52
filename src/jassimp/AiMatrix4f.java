@@ -3,7 +3,7 @@
  * Open Asset Import Library - Java Binding (jassimp)
  * ---------------------------------------------------------------------------
  *
- * Copyright (c) 2006-2020, assimp team
+ * Copyright (c) 2006-2023, assimp team, last updated by steelswing
  *
  * All rights reserved.
  *

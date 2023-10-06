@@ -13,8 +13,8 @@ CND_BUILDDIR=build
 CND_DLIB_EXT=dll
 NBTMPDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=${CND_DISTDIR}/libjassimp.${CND_DLIB_EXT}
-OUTPUT_BASENAME=libjassimp.${CND_DLIB_EXT}
+OUTPUT_PATH=${CND_DISTDIR}/jassimp.${CND_DLIB_EXT}
+OUTPUT_BASENAME=jassimp.${CND_DLIB_EXT}
 PACKAGE_TOP_DIR=libjassimp-native.dll/
 
 # Functions
@@ -62,6 +62,18 @@ mkdir -p ${NBTMPDIR}
 cd "${TOP}"
 makeDirectory "${NBTMPDIR}/libjassimp-native.dll/lib"
 copyFileToTmpDir "${CND_DISTDIR}/libassimp-5.dll" "${NBTMPDIR}/${PACKAGE_TOP_DIR}lib/libassimp-5.dll" 0644
+
+cd "${TOP}"
+makeDirectory "${NBTMPDIR}/libjassimp-native.dll/lib"
+copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}" 0644
+
+cd "${TOP}"
+makeDirectory "${NBTMPDIR}/libjassimp-native.dll/lib"
+copyFileToTmpDir "${CND_DISTDIR}/libassimp-5.dll" "${NBTMPDIR}/${PACKAGE_TOP_DIR}lib/libassimp-5.dll" 0644
+
+cd "${TOP}"
+makeDirectory "${NBTMPDIR}/libjassimp-native.dll/lib"
+copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}" 0644
 
 cd "${TOP}"
 makeDirectory "${NBTMPDIR}/libjassimp-native.dll/lib"
