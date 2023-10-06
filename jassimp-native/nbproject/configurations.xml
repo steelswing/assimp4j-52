@@ -42,6 +42,7 @@
       </toolsSet>
       <compileType>
         <cTool>
+          <developmentMode>5</developmentMode>
           <standard>10</standard>
           <commandlineTool>gcc</commandlineTool>
           <incDir>
@@ -49,28 +50,31 @@
             <pElem>C:/Program Files/Java/jdk1.8.0_342/include/win32</pElem>
             <pElem>include</pElem>
           </incDir>
+          <commandLine>-static-libgcc</commandLine>
         </cTool>
         <ccTool>
+          <developmentMode>5</developmentMode>
           <standard>8</standard>
           <incDir>
             <pElem>C:/Program Files/Java/jdk1.8.0_342/include</pElem>
             <pElem>C:/Program Files/Java/jdk1.8.0_342/include/win32</pElem>
             <pElem>include</pElem>
           </incDir>
+          <commandLine>-static-libgcc</commandLine>
         </ccTool>
         <linkerTool>
-          <output>${CND_DISTDIR}/libjassimp.${CND_DLIB_EXT}</output>
+          <output>${CND_DISTDIR}/jassimp.${CND_DLIB_EXT}</output>
           <linkerAddLib>
             <pElem>lib</pElem>
           </linkerAddLib>
           <stripSymbols>true</stripSymbols>
+          <linkerDepDynSerchKind>2</linkerDepDynSerchKind>
           <linkerCopySharedLibs>true</linkerCopySharedLibs>
           <commandlineTool>g++</commandlineTool>
           <linkerLibItems>
-            <linkerLibFileItem>lib/libassimp.dll.a</linkerLibFileItem>
-            <linkerLibFileItem>lib/libassimp-5.dll</linkerLibFileItem>
+            <linkerLibLibItem>assimp</linkerLibLibItem>
           </linkerLibItems>
-          <commandLine>-LC:/msys64/mingw64/lib -static --static -static-libgcc -static-libstdc++</commandLine>
+          <commandLine>-LC:/msys64/mingw64/lib -lz -static --static -static-libgcc -static-libstdc++ -static-libgcc -static-libstdc++</commandLine>
         </linkerTool>
       </compileType>
       <packaging>
@@ -79,6 +83,24 @@
           <packFileListElem type="File"
                             to="${PACKAGE_TOP_DIR}lib/libassimp-5.dll"
                             from="${CND_DISTDIR}/libassimp-5.dll"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}"
+                            from="${OUTPUT_PATH}"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}lib/libassimp-5.dll"
+                            from="${CND_DISTDIR}/libassimp-5.dll"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}"
+                            from="${OUTPUT_PATH}"
                             perm="644"
                             owner="root"
                             group="bin"/>

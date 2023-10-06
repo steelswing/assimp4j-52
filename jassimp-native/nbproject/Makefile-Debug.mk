@@ -39,11 +39,11 @@ OBJECTFILES= \
 
 
 # C Compiler Flags
-CFLAGS=
+CFLAGS=-static-libgcc
 
 # CC Compiler Flags
-CCFLAGS=
-CXXFLAGS=
+CCFLAGS=-static-libgcc
+CXXFLAGS=-static-libgcc
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -52,25 +52,20 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-Llib lib/libassimp.dll.a lib/libassimp-5.dll
+LDLIBSOPTIONS=-Llib -lassimp
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/libjassimp.${CND_DLIB_EXT}
-	${CP} lib/libassimp-5.dll ${CND_DISTDIR}
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/jassimp.${CND_DLIB_EXT}
 
-${CND_DISTDIR}/libjassimp.${CND_DLIB_EXT}: lib/libassimp.dll.a
-
-${CND_DISTDIR}/libjassimp.${CND_DLIB_EXT}: lib/libassimp-5.dll
-
-${CND_DISTDIR}/libjassimp.${CND_DLIB_EXT}: ${OBJECTFILES}
+${CND_DISTDIR}/jassimp.${CND_DLIB_EXT}: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}
-	g++ -o ${CND_DISTDIR}/libjassimp.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -LC:/msys64/mingw64/lib -static --static -static-libgcc -static-libstdc++ -shared -s
+	g++ -o ${CND_DISTDIR}/jassimp.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -LC:/msys64/mingw64/lib -lz -static --static -static-libgcc -static-libstdc++ -static-libgcc -static-libstdc++ -shared -s
 
 ${OBJECTDIR}/src/jassimp.o: src/jassimp.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I/C/Program\ Files/Java/jdk1.8.0_342/include -I/C/Program\ Files/Java/jdk1.8.0_342/include/win32 -Iinclude -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/jassimp.o src/jassimp.cpp
+	$(COMPILE.cc) -O2 -I/C/Program\ Files/Java/jdk1.8.0_342/include -I/C/Program\ Files/Java/jdk1.8.0_342/include/win32 -Iinclude -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/jassimp.o src/jassimp.cpp
 
 # Subprojects
 .build-subprojects:
@@ -78,8 +73,6 @@ ${OBJECTDIR}/src/jassimp.o: src/jassimp.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} -r ${CND_DISTDIR}/libassimp-5.dll
-	${RM} ${CND_DISTDIR}/libjassimp.${CND_DLIB_EXT}
 
 # Subprojects
 .clean-subprojects:

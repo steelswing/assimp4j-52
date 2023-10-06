@@ -9,8 +9,8 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=MinGW_1-Windows
 CND_ARTIFACT_DIR_Debug=dist
-CND_ARTIFACT_NAME_Debug=libjassimp.dll
-CND_ARTIFACT_PATH_Debug=dist/libjassimp.dll
+CND_ARTIFACT_NAME_Debug=jassimp.dll
+CND_ARTIFACT_PATH_Debug=dist/jassimp.dll
 CND_PACKAGE_DIR_Debug=dist/Debug/MinGW_1-Windows/package
 CND_PACKAGE_NAME_Debug=libjassimp-native.dll.tar
 CND_PACKAGE_PATH_Debug=dist/Debug/MinGW_1-Windows/package/libjassimp-native.dll.tar

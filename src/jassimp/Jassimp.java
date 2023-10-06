@@ -3,7 +3,7 @@
  * Open Asset Import Library - Java Binding (jassimp)
  * ---------------------------------------------------------------------------
  *
- * Copyright (c) 2006-2020, assimp team
+ * Copyright (c) 2006-2023, assimp team, last updated by steelswing
  *
  * All rights reserved.
  *
@@ -135,7 +135,6 @@ public final class Jassimp {
         return importFile(filename, EnumSet.noneOf(AiPostProcessSteps.class), ioSystem);
     }
 
-
     /**
      * Imports a file via assimp.
      *
@@ -147,6 +146,21 @@ public final class Jassimp {
      */
     public static AiScene importFile(String filename,
             Set<AiPostProcessSteps> postProcessing)
+            throws IOException {
+        return importFile(filename, postProcessing, null);
+    }
+
+    /**
+     * Imports a file via assimp.
+     *
+     * @param filename the file to import
+     * @param postProcessing post processing flags
+     * @return the loaded scene, or null if an error occurred
+     *
+     * @throws IOException if an error occurs
+     */
+    public static AiScene importFile(String filename,
+            long postProcessing)
             throws IOException {
         return importFile(filename, postProcessing, null);
     }
@@ -178,13 +192,42 @@ public final class Jassimp {
      * @throws IOException if an error occurs
      */
     public static AiScene importFile(String filename,
+            long postProcessing, AiIOSystem<?> ioSystem)
+            throws IOException {
+        return importFile(filename, postProcessing, ioSystem, null);
+    }
+
+    /**
+     * Imports a file via assimp.
+     *
+     * @param filename the file to import
+     * @param postProcessing post processing flags
+     * @param ioSystem ioSystem to load files, or null for default
+     * @return the loaded scene, or null if an error occurred
+     *
+     * @throws IOException if an error occurs
+     */
+    public static AiScene importFile(String filename,
             Set<AiPostProcessSteps> postProcessing, AiIOSystem<?> ioSystem,
             AiProgressHandler progressHandler) throws IOException {
 
         loadLibrary();
+        return aiImportFile(filename, AiPostProcessSteps.toRawValue(postProcessing), ioSystem, progressHandler);
+    }
 
-        return aiImportFile(filename, AiPostProcessSteps.toRawValue(
-                postProcessing), ioSystem, progressHandler);
+    /**
+     * Imports a file via assimp.
+     *
+     * @param filename the file to import
+     * @param postProcessing post processing flags
+     * @param ioSystem ioSystem to load files, or null for default
+     * @return the loaded scene, or null if an error occurred
+     *
+     * @throws IOException if an error occurs
+     */
+    public static AiScene importFile(String filename, long postProcessing, AiIOSystem<?> ioSystem, AiProgressHandler progressHandler) throws IOException {
+        loadLibrary();
+        return aiImportFile(filename, postProcessing, ioSystem, progressHandler);
     }
 
 

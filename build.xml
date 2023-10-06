@@ -70,7 +70,7 @@
     nbproject/build-impl.xml file. 
 
     -->
-    <target name="-post-jar">
+    <target name="-post-jar1">
         <!-- Change the value of this property to be the name of your JAR,
              minus the .jar extension. It should not have spaces.
              <property name="store.jar.name" value="MyJarName"/>
