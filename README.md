@@ -3,7 +3,7 @@ The Assimp (Open Asset Import Library) JNI bindings for Java
 This library works without LWJGL 3! And has a normal (not C++) API.
 
 
-#### Assimp version: 5.2.5 ONLY WORK ON WINDOWS! 
+#### Assimp version: 5.2.5 ONLY WORK ON WINDOWS, LINUX! 
 #### Assimp version: 2012 WORK ON Linux, MacOS! 
 
 #### Static mesh loader
