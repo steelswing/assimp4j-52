@@ -4,7 +4,7 @@ This library works without LWJGL 3! And has a normal (not C++) API.
 
 
 #### Assimp version: 5.2.5 ONLY WORK ON WINDOWS, LINUX! 
-#### Assimp version: 2012 WORK ON Linux, MacOS! 
+#### Assimp version: 2012 WORK ON MacOS! 
 
 #### Static mesh loader
 ```java
