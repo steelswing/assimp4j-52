@@ -103,12 +103,12 @@ public class NativeLoader {
             }
         }
         if (nativesFile == null) {
-            System.out.println("[LibGizmo] You Operating System not supported. os.name=" + osName + ", is64bit=" + is64bit);
-            JOptionPane.showMessageDialog(null, "[LibGizmo] You Operating System not supported. os.name=" + osName + ", is64bit=" + is64bit, "Startup error", JOptionPane.ERROR_MESSAGE);
+            System.out.println("[Assimp4j] You Operating System not supported. os.name=" + osName + ", is64bit=" + is64bit);
+            JOptionPane.showMessageDialog(null, "[Assimp4j] You Operating System not supported. os.name=" + osName + ", is64bit=" + is64bit, "Startup error", JOptionPane.ERROR_MESSAGE);
             System.exit(-1);
         } else if (!nativesFile.exists()) {
-            System.out.println("[LibGizmo] Natives file not found. You Operating System not supported. os.name=" + osName + ", is64bit=" + is64bit);
-            JOptionPane.showMessageDialog(null, "[LibGizmo] Natives file not found. Maybe You Operating System not supported. os.name=" + osName + ", is64bit=" + is64bit, "Startup error", JOptionPane.ERROR_MESSAGE);
+            System.out.println("[Assimp4j] Natives file not found. You Operating System not supported. os.name=" + osName + ", is64bit=" + is64bit);
+            JOptionPane.showMessageDialog(null, "[Assimp4j] Natives file not found. Maybe You Operating System not supported. os.name=" + osName + ", is64bit=" + is64bit, "Startup error", JOptionPane.ERROR_MESSAGE);
             System.exit(-1);
         } else {
             System.load(nativesFile.getAbsolutePath());
