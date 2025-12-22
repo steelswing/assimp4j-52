@@ -6,6 +6,46 @@ This library works without LWJGL 3! And has a normal (not C++) API.
 #### Assimp version: 5.2.5 ONLY WORK ON WINDOWS, LINUX! 
 #### Assimp version: 2012 WORK ON MacOS! 
 
+# load examples:
+
+## from file: 
+```java
+ 
+Jassimp.importFile(filePath.getPath(), ASSIMP_POST);
+```
+
+## from byte array: 
+```java
+
+String fileName, byte[] data, Set<AiPostProcessSteps> postFlags
+ AiScene scene = Jassimp.importFile(fileName, postFlags, new AiIOSystem<AiInputStreamIOStream>() {
+    @Override
+    public AiInputStreamIOStream open(String path, String ioMode) {
+        try {
+            if (fileName.equals(path)) {
+                return new AiInputStreamIOStream(new ByteArrayInputStream(data));
+            }
+        } catch (Throwable ex) {
+            System.getLogger(AssimpModelLoader.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+        return null;
+    }
+
+    @Override
+    public boolean exists(String path) {
+        return fileName.equals(path);
+    }
+
+    @Override
+    public char getOsSeparator() {
+        return '/';
+    }
+
+    @Override
+    public void close(AiInputStreamIOStream file) {
+    }
+});
+```
 #### Static mesh loader
 ```java
 public static final Set<AiPostProcessSteps> ASSIMP_POST = new HashSet<AiPostProcessSteps>() {
@@ -23,7 +63,7 @@ public static final Set<AiPostProcessSteps> ASSIMP_POST = new HashSet<AiPostProc
   };
   
   public static Mesh load(File filePath, int meshId) throws IOException {
-      AiScene scene = IHMCJassimp.importFile(filePath.getPath(), ASSIMP_POST);
+      AiScene scene = Jassimp.importFile(filePath.getPath(), ASSIMP_POST);//IHMCJassimp.importFile(filePath.getPath(), ASSIMP_POST);
       AiMesh mesh = scene.getMeshes().get(meshId);
       return loadData(mesh, null);
   }
